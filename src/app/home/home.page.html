@@ -1,20 +1,26 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      {{title}}
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <button (click)="changeTitle()" [disabled]="isLoading">{{isLoading ? "Carregando..." : "Teste"}}</button>
+    <input type="text" [(ngModel)]="newListName">
+    <p>{{newListName}}</p>
+    <button (click)="createList(newListName)" [disabled]="newListName.trim() == ''">Criar Lista</button>
+    @if(isLoading) {
+      <p>Aguarde</p>
+    }
+    @for (item of shoppingLists; track item.id) {
+      <p>{{item.name}}</p>
+      <button (click)="removeListItem(item.id)">Remover</button>
+    }
+    @empty {
+      “Você ainda não tem listas”
+    }
   </div>
 </ion-content>
