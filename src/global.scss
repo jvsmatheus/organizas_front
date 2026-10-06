@@ -1,13 +1,16 @@
 /*
- * App Global CSS
- * ----------------------------------------------------------------------------
- * Put style rules here that you want to apply globally. These styles are for
- * the entire app and not just one component. Additionally, this file can be
- * used as an entry point to import other CSS/Sass files to be included in the
- * output CSS.
- * For more information on global stylesheets, visit the documentation:
- * https://ionicframework.com/docs/layout/global-stylesheets
- */
+* App Global CSS
+* ----------------------------------------------------------------------------
+* Put style rules here that you want to apply globally. These styles are for
+* the entire app and not just one component. Additionally, this file can be
+* used as an entry point to import other CSS/Sass files to be included in the
+* output CSS.
+* For more information on global stylesheets, visit the documentation:
+* https://ionicframework.com/docs/layout/global-stylesheets
+*/
+
+/* Bootstrap */
+@import "bootstrap/dist/css/bootstrap.min.css";
 
 /* Core CSS required for Ionic components to work properly */
 @import "@ionic/angular/css/core.css";
@@ -35,3 +38,46 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import '@ionic/angular/css/palettes/dark.system.css';
+
+@import "./theme/variables.scss";
+
+.form-label {
+  color: var(--app-color-text-muted);
+  font-weight: 500;
+}
+
+.form-control {
+  min-height: var(--app-control-height);
+  color: var(--app-color-text);
+  background-color: var(--app-color-surface);
+  border-color: var(--app-color-border);
+  border-radius: var(--app-radius-control);
+  box-shadow: var(--app-shadow-soft);
+}
+
+.form-control::placeholder {
+  color: var(--app-color-text-muted);
+  opacity: 0.75;
+}
+
+.form-control:focus {
+  color: var(--app-color-text);
+  border-color: var(--app-color-primary);
+  box-shadow: 0 0 0 0.25rem var(--app-color-focus);
+}
+
+/* Botões Bootstrap compartilhados. */
+.btn {
+  min-height: var(--app-control-height);
+  border-radius: var(--app-radius-control);
+  font-weight: 600;
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--app-color-primary);
+  --bs-btn-border-color: var(--app-color-primary);
+  --bs-btn-hover-bg: var(--app-color-primary-hover);
+  --bs-btn-hover-border-color: var(--app-color-primary-hover);
+  --bs-btn-active-bg: var(--app-color-primary-pressed);
+  --bs-btn-active-border-color: var(--app-color-primary-pressed);
+}

@@ -1,0 +1,92 @@
+<ion-content [fullscreen]="true">
+  <main class="login-page container d-flex flex-column justify-content-center px-4 py-5">
+    <header class="mb-4">
+      <p class="brand-label mb-2">Organizas</p>
+      <h1 class="h2 fw-semibold mb-2">Bom ter você por aqui</h1>
+      <p class="text-secondary mb-0">
+        Entre para deixar suas vida em ordem.
+      </p>
+    </header>
+
+    <!-- <form #loginForm="ngForm" (ngSubmit)="onSubmit()" novalidate> -->
+    <form novalidate>
+      <div class="mb-3">
+        <label for="email" class="form-label">E-mail</label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          class="form-control"
+          placeholder="voce@exemplo.com"
+          autocomplete="email"
+        />
+
+        <!-- @if (emailInput.invalid && (emailInput.dirty || emailInput.touched)) {
+          <div id="email-error" class="invalid-feedback d-block">
+            Informe um e-mail válido.
+          </div>
+        } -->
+      </div>
+
+      <div class="mb-2">
+        <label for="password" class="form-label">Senha</label>
+
+        <div class="input-group">
+          <input
+            id="password"
+            class="form-control"
+            [type]="showPassword ? 'text' : 'password'"
+            name="password"
+            placeholder="Digite sua senha"
+            autocomplete="current-password"
+            /* [(ngModel)]="password" */
+            required
+            /* #passwordInput="ngModel" */
+            aria-describedby="password-error"
+          />
+          
+          <button
+            class="btn btn-outline-secondary password-toggle"
+            type="button"
+            [attr.aria-label]="showPassword ? 'Ocultar senha' : 'Mostrar senha'"
+            (click)="showPassword = !showPassword"
+          >
+            {{ showPassword ? 'Ocultar' : 'Mostrar' }}
+          </button>
+        </div>
+
+        <!-- @if (passwordInput.invalid && (passwordInput.dirty || passwordInput.touched)) {
+          <div id="password-error" class="invalid-feedback d-block">
+            Informe sua senha.
+          </div>
+        } -->
+      </div>
+
+      <div class="d-flex justify-content-end mb-4">
+        <a class="brand-link small" routerLink="/forgot-password">
+          Esqueci minha senha
+        </a>
+      </div>
+
+      <!-- @if (loginError) {
+        <div class="alert alert-danger py-2" role="alert">
+          {{ loginError }}
+        </div>
+      } -->
+
+      <button
+        class="btn btn-primary w-100 py-3 login-submit"
+        type="submit"
+        /* [disabled]="loginForm.invalid || isLoading" */
+      >
+        <!-- {{ isLoading ? 'Entrando…' : 'Entrar' }} -->
+        Entrar
+      </button>
+    </form>
+
+    <p class="text-secondary small text-center mt-4 mb-0">
+      Ainda não tem uma conta?
+      <a class="brand-link ms-1" routerLink="/register">Criar conta</a>
+    </p>
+  </main>
+</ion-content>

@@ -1,0 +1,58 @@
+ion-content {
+  --background: var(--app-color-background);
+}
+
+.login-page {
+  min-height: 100%;
+  max-width: 28rem;
+  padding-bottom: calc(2rem + env(safe-area-inset-bottom)) !important;
+}
+
+.brand-label,
+.brand-link {
+  color: var(--app-color-primary);
+}
+
+.brand-label {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+h1 {
+  color: var(--app-color-text);
+}
+
+.input-group .form-control {
+  border-radius: var(--app-radius-control) 0 0 var(--app-radius-control);
+}
+
+.password-toggle {
+  min-height: var(--app-control-height);
+  color: var(--app-color-primary);
+  background: var(--app-color-surface);
+  border-color: var(--app-color-border);
+  border-radius: 0 var(--app-radius-control) var(--app-radius-control) 0;
+}
+
+.login-submit {
+  --bs-btn-bg: var(--app-color-primary);
+  --bs-btn-border-color: var(--app-color-primary);
+  --bs-btn-hover-bg: var(--app-color-primary-hover);
+  --bs-btn-hover-border-color: var(--app-color-primary-hover);
+  --bs-btn-active-bg: var(--app-color-primary-pressed);
+  --bs-btn-active-border-color: var(--app-color-primary-pressed);
+  --bs-btn-focus-shadow-rgb: 85, 117, 99;
+
+  border-radius: var(--app-radius-button);
+  font-weight: 650;
+}
+
+.brand-link {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.brand-link:hover {
+  text-decoration: underline;
+}
