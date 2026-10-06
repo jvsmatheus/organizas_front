@@ -8,7 +8,14 @@
 
 <ion-content [fullscreen]="true">
   <div id="container">
-    <button (click)="changeTitle()" [disabled]="isLoading">{{isLoading ? "Carregando..." : "Teste"}}</button>
+    <button (click)="getUserProfile()" [disabled]="isLoading">{{isLoading ? "Carregando" : "Testar"}}</button>
+    @if (isApiConnect) {
+      <p>{{responseMessage}}</p>
+    }
+  </div>
+</ion-content>
+
+<!-- <button (click)="changeTitle()" [disabled]="isLoading">{{isLoading ? "Carregando..." : "Teste"}}</button>
     <input type="text" [(ngModel)]="newListName">
     <p>{{newListName}}</p>
     <button (click)="createList(newListName)" [disabled]="newListName.trim() == ''">Criar Lista</button>
@@ -21,6 +28,4 @@
     }
     @empty {
       “Você ainda não tem listas”
-    }
-  </div>
-</ion-content>
+    } -->
