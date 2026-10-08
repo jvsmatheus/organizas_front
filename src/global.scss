@@ -81,3 +81,13 @@
   --bs-btn-active-bg: var(--app-color-primary-pressed);
   --bs-btn-active-border-color: var(--app-color-primary-pressed);
 }
+
+.btn:disabled,
+.btn.disabled {
+  color: var(--app-color-text-muted);
+  background-color: var(--app-color-background);
+  border-color: var(--app-color-border);
+  opacity: 1;
+  cursor: not-allowed;
+  pointer-events: none;
+}
