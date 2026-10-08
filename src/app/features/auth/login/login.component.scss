@@ -35,18 +35,18 @@ h1 {
   border-radius: 0 var(--app-radius-control) var(--app-radius-control) 0;
 }
 
-.login-submit {
-  --bs-btn-bg: var(--app-color-primary);
-  --bs-btn-border-color: var(--app-color-primary);
-  --bs-btn-hover-bg: var(--app-color-primary-hover);
-  --bs-btn-hover-border-color: var(--app-color-primary-hover);
-  --bs-btn-active-bg: var(--app-color-primary-pressed);
-  --bs-btn-active-border-color: var(--app-color-primary-pressed);
-  --bs-btn-focus-shadow-rgb: 85, 117, 99;
+// .login-submit {
+//   --bs-btn-bg: var(--app-color-primary);
+//   --bs-btn-border-color: var(--app-color-primary);
+//   --bs-btn-hover-bg: var(--app-color-primary-hover);
+//   --bs-btn-hover-border-color: var(--app-color-primary-hover);
+//   --bs-btn-active-bg: var(--app-color-primary-pressed);
+//   --bs-btn-active-border-color: var(--app-color-primary-pressed);
+//   --bs-btn-focus-shadow-rgb: 85, 117, 99;
 
-  border-radius: var(--app-radius-button);
-  font-weight: 650;
-}
+//   border-radius: var(--app-radius-button);
+//   font-weight: 650;
+// }
 
 .brand-link {
   font-weight: 600;
