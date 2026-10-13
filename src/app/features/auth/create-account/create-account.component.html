@@ -8,8 +8,7 @@
       </p>
     </header>
 
-    <!-- <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" novalidate> -->
-    <form novalidate>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
       <div class="mb-3">
         <label for="email" class="form-label">E-mail</label>
         <input
@@ -19,7 +18,7 @@
           class="form-control"
           placeholder="voce@exemplo.com"
           autocomplete="email"
-          /* formControlName="email" */
+          formControlName="email"
         />
       </div>
 
@@ -32,7 +31,7 @@
           class="form-control"
           placeholder="Crie uma senha"
           autocomplete="new-password"
-          /* formControlName="password" */
+          formControlName="password"
         />
         <div class="form-text">
           Use uma senha segura para proteger sua conta.
@@ -48,11 +47,15 @@
           class="form-control"
           placeholder="Digite a senha novamente"
           autocomplete="new-password"
-          /* formControlName="confirmPassword" */
+          formControlName="confirmPassword"
         />
       </div>
 
-      <button class="btn btn-primary w-100 py-3" type="submit">
+      <button
+        class="btn btn-primary w-100 py-3"
+        type="submit"
+        /* [disabled]="registerForm.invalid || isLoading" */
+      >
         Criar conta
       </button>
     </form>
