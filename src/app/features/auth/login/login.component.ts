@@ -1,6 +1,7 @@
 import { ChangeDetectorRef, Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { IonButton, IonContent, IonInput, IonItem, IonList, IonToast } from '@ionic/angular';
+import { RouterLink } from '@angular/router';
+import { IonContent, IonToast } from '@ionic/angular';
 import { finalize } from 'rxjs';
 import { AuthService } from './services/auth.service.ts';
 
@@ -10,12 +11,9 @@ import { AuthService } from './services/auth.service.ts';
   styleUrls: ['./login.component.scss'],
   imports: [
     IonContent,
-    IonList,
-    IonItem,
-    IonInput,
-    IonButton,
     IonToast,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterLink
   ],
 })
 export class LoginComponent {
@@ -38,23 +36,23 @@ export class LoginComponent {
   });
 
   onSubmit(): void {
+    this.isLoading = true;
+    
     if (this.loginForm.invalid) {
       this.loginForm.markAllAsTouched();
       return;
     }
 
-    console.log(this.loginForm.value);
-    
     this.authService.login(this.loginForm.controls["email"].value, this.loginForm.controls["password"].value)
-      .pipe(finalize(() => this.changeDetector.detectChanges))
+      .pipe(finalize(() => {
+        this.isLoading = false;
+        this.changeDetector.detectChanges();
+      }))
       .subscribe({
         next: (res) => {
           console.log(res);
         },
-        error: (err) => {
-          this.openToast = true;
-          console.log(err);
-        }
+        error: _ => this.openToast = true
       });
   }
 }

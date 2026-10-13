@@ -5,7 +5,7 @@
 @let isPasswordEmpty = loginForm.controls['password'].touched && loginForm.controls['password'].hasError('required');
 
 <ion-content [fullscreen]="true">
-  <main class="login-page container d-flex flex-column justify-content-center px-4 py-5">
+  <main class="default-page container d-flex flex-column justify-content-center px-4 py-5">
     <header class="mb-4">
       <p class="brand-label mb-2">Organizas</p>
       <h1 class="h2 fw-semibold mb-2">Bom ter você por aqui</h1>
@@ -73,12 +73,6 @@
         </a>
       </div>
 
-      <!-- @if (loginError) {
-        <div class="alert alert-danger py-2" role="alert">
-          {{ loginError }}
-        </div>
-      } -->
-
       <button
         class="btn btn-primary w-100 py-3"
         type="submit"
@@ -90,7 +84,7 @@
 
     <p class="text-secondary small text-center mt-4 mb-0">
       Ainda não tem uma conta?
-      <a class="brand-link ms-1" routerLink="/register">Criar conta</a>
+      <a class="brand-link ms-1" routerLink="/create-account">Criar conta</a>
     </p>
   </main>
   <ion-toast [isOpen]="openToast" message="Email e/ou senha inválidos" [duration]="5000" (didDismiss)="this.openToast = false;"></ion-toast>

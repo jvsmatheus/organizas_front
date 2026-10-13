@@ -10,6 +10,7 @@
 */
 
 /* Bootstrap */
+@import "./theme/variables.scss";
 @import "bootstrap/dist/css/bootstrap.min.css";
 
 /* Core CSS required for Ionic components to work properly */
@@ -39,7 +40,40 @@
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import '@ionic/angular/css/palettes/dark.system.css';
 
-@import "./theme/variables.scss";
+ion-content {
+  --background: var(--app-color-background);
+}
+
+.default-page {
+  min-height: 100%;
+  max-width: 28rem;
+  padding-bottom: calc(2rem + env(safe-area-inset-bottom)) !important;
+}
+
+.brand-label,
+.brand-link {
+  color: var(--app-color-primary);
+}
+
+.brand-label {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+h1 {
+  color: var(--app-color-text) !important;
+}
+
+.brand-link {
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.brand-link:hover {
+  text-decoration: underline;
+}
 
 .form-label {
   color: var(--app-color-text-muted);

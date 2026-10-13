@@ -1,0 +1,65 @@
+<ion-content [fullscreen]="true">
+  <main class="default-page container d-flex flex-column justify-content-center px-4 py-5">
+    <header class="mb-4">
+      <p class="brand-label mb-2">Organizas</p>
+      <h1 class="h2 fw-semibold mb-2">Vamos começar?</h1>
+      <p class="intro-text mb-0">
+        Crie sua conta para organizar sua vida com tranquilidade.
+      </p>
+    </header>
+
+    <!-- <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" novalidate> -->
+    <form novalidate>
+      <div class="mb-3">
+        <label for="email" class="form-label">E-mail</label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          class="form-control"
+          placeholder="voce@exemplo.com"
+          autocomplete="email"
+          /* formControlName="email" */
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="password" class="form-label">Senha</label>
+        <input
+          id="password"
+          name="password"
+          type="password"
+          class="form-control"
+          placeholder="Crie uma senha"
+          autocomplete="new-password"
+          /* formControlName="password" */
+        />
+        <div class="form-text">
+          Use uma senha segura para proteger sua conta.
+        </div>
+      </div>
+
+      <div class="mb-4">
+        <label for="confirmPassword" class="form-label">Confirmar senha</label>
+        <input
+          id="confirmPassword"
+          name="confirmPassword"
+          type="password"
+          class="form-control"
+          placeholder="Digite a senha novamente"
+          autocomplete="new-password"
+          /* formControlName="confirmPassword" */
+        />
+      </div>
+
+      <button class="btn btn-primary w-100 py-3" type="submit">
+        Criar conta
+      </button>
+    </form>
+
+    <p class="text-secondary small text-center mt-4 mb-0">
+      Já tem uma conta?
+      <a class="brand-link ms-1" routerLink="/login">Entrar</a>
+    </p>
+  </main>
+</ion-content>
