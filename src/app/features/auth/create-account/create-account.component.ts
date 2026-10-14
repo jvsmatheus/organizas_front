@@ -18,17 +18,22 @@ export class CreateAccountComponent {
   protected isLoading: boolean = false;
 
   protected registerForm: FormGroup = new FormGroup({
-    email: new FormControl<string>('', [Validators.email, Validators.required]),
+    email: new FormControl<string>('', [
+      Validators.email,
+      Validators.required
+    ]),
     password: new FormControl<string>('', [
       CustomValidators.hasNumber,
       CustomValidators.hasNonAlphanumeric,
       Validators.minLength(10),
+      Validators.maxLength(255),
       Validators.required
     ]),
     confirmPassword: new FormControl<string>('', [
-      CustomValidators.passwordMatchValidator,
       Validators.required
     ])
+  }, {
+    validators: CustomValidators.passwordMatchValidator
   });
 
   onSubmit(): void {
@@ -38,5 +43,26 @@ export class CreateAccountComponent {
     // }
 
     console.log(this.registerForm);
+  }
+
+  get emailIsValid(): boolean {
+    return this.registerForm.controls["email"].touched && this.registerForm.controls["email"].hasError("email");
+  }
+
+  get passwordHasNum(): boolean {
+    return this.registerForm.controls["password"].touched && this.registerForm.controls["password"].hasError("noNumber"); 
+  }
+
+  get passwordHasNonAlphanumeric(): boolean {
+    return this.registerForm.controls["password"].touched && this.registerForm.controls["password"].hasError("noNonAlphanumeric"); 
+  }
+
+  get passwordHasValidLength(): boolean {
+    return this.registerForm.controls["password"].touched && this.registerForm.controls["password"].hasError("minlength")
+      || this.registerForm.controls["password"].touched && this.registerForm.controls["password"].hasError("maxlength"); 
+  }
+
+  get confirmPasswordMatch(): boolean {
+    return this.registerForm.hasError("passwordMismatch")
   }
 }

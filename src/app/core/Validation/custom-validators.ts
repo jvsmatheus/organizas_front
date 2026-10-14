@@ -9,7 +9,7 @@ export class CustomValidators {
 
     static hasNonAlphanumeric: ValidatorFn = (control: AbstractControl): ValidationErrors | null => {
         if (!control.value) return null;
-        const hasNonAlphanumeric = /^a-zA-Z0-9/.test(control.value);
+        const hasNonAlphanumeric = /[^a-zA-Z0-9]/.test(control.value);
         return hasNonAlphanumeric ? null : { noNonAlphanumeric: true }
     }
 
