@@ -1,8 +1,8 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'organizas-app',
+  appId: 'com.matheus.organizas',
+  appName: 'Organizas',
   webDir: 'www'
 };
 

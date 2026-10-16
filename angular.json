@@ -33,8 +33,13 @@
                 "output": "assets"
               }
             ],
-            "styles": ["src/global.scss", "src/theme/variables.scss"],
-            "scripts": [],
+            "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/bootstrap-icons/font/bootstrap-icons.css",
+              "src/global.scss",
+              "src/theme/variables.scss"
+            ],
+            "scripts": ["node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"],
             "browser": "src/main.ts"
           },
           "configurations": {
@@ -115,7 +120,10 @@
     }
   },
   "cli": {
-    "schematicCollections": ["@ionic/angular-toolkit"]
+    "schematicCollections": ["@ionic/angular-toolkit"],
+    "cache": {
+      "enabled": false
+    }
   },
   "schematics": {
     "@ionic/angular-toolkit:component": {
